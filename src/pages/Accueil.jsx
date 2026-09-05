@@ -1,7 +1,18 @@
+import { useState, useEffect } from 'react';
+import { Modal, Button } from 'react-bootstrap';
 import heroBg from '../assets/hero-bg.jpg';
 import aboutImg from '../assets/john-doe-about.jpg';
 
 function Accueil() {
+  const [showModal, setShowModal] = useState(false);
+  const [githubData, setGithubData] = useState(null);
+
+  useEffect(() => {
+    fetch('https://api.github.com/users/Sach0Mastro')
+      .then((res) => res.json())
+      .then((data) => setGithubData(data));
+  }, []);
+
   return (
     <div>
       <section
@@ -15,12 +26,13 @@ function Accueil() {
       >
         <h1>Bonjour, je suis John Doe</h1>
         <h2>Développeur web full stack</h2>
-        <button className="btn btn-danger mt-3">En savoir plus</button>
+        <button className="btn btn-danger mt-3" onClick={() => setShowModal(true)}>
+          En savoir plus
+        </button>
       </section>
 
       <section className="container py-5">
         <div className="row">
-
           <div className="col-md-6">
             <h3 className="border-bottom border-primary pb-2 d-inline-block">À propos</h3>
             <img src={aboutImg} alt="John Doe au travail" className="img-fluid rounded my-3" />
@@ -31,37 +43,55 @@ function Accueil() {
 
           <div className="col-md-6">
             <h3 className="border-bottom border-primary pb-2 d-inline-block">Mes compétences</h3>
-
             <div className="mt-4">
               <p className="mb-1">HTML5 90%</p>
               <div className="progress mb-3">
                 <div className="progress-bar bg-danger" style={{ width: '90%' }}></div>
               </div>
-
               <p className="mb-1">CSS3 80%</p>
               <div className="progress mb-3">
                 <div className="progress-bar bg-info" style={{ width: '80%' }}></div>
               </div>
-
               <p className="mb-1">JavaScript 70%</p>
               <div className="progress mb-3">
                 <div className="progress-bar bg-warning" style={{ width: '70%' }}></div>
               </div>
-
               <p className="mb-1">PHP 60%</p>
               <div className="progress mb-3">
                 <div className="progress-bar bg-success" style={{ width: '60%' }}></div>
               </div>
-
               <p className="mb-1">React 50%</p>
               <div className="progress mb-3">
                 <div className="progress-bar bg-primary" style={{ width: '50%' }}></div>
               </div>
             </div>
           </div>
-
         </div>
       </section>
+
+      <Modal show={showModal} onHide={() => setShowModal(false)} centered>
+        <Modal.Header closeButton>
+          <Modal.Title>Profil GitHub</Modal.Title>
+        </Modal.Header>
+        <Modal.Body>
+          {githubData ? (
+            <div className="text-center">
+              <img src={githubData.avatar_url} alt="Avatar GitHub" className="rounded-circle mb-3" width="100" />
+              <h5>{githubData.name}</h5>
+              <p>{githubData.bio}</p>
+              <p>Followers : {githubData.followers}</p>
+              <p>Dépôts publics : {githubData.public_repos}</p>
+            </div>
+          ) : (
+            <p>Chargement des données GitHub...</p>
+          )}
+        </Modal.Body>
+        <Modal.Footer>
+          <Button variant="secondary" onClick={() => setShowModal(false)}>
+            Fermer
+          </Button>
+        </Modal.Footer>
+      </Modal>
     </div>
   );
 }
