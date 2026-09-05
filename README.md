@@ -67,4 +67,4 @@ npm run preview
 
 ## Auteur
 
-Projet réalisé par Sacha Mastrolonardo dans le cadre d'une formation développeur web.
+Projet réalisé par Sach0Mastro dans le cadre d'une formation développeur web.
