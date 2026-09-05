@@ -1,8 +1,33 @@
-.service-card {
-  transition: background-color 0.3s ease, box-shadow 0.3s ease;
+/* Header : lien actif et survol */
+.nav-link.active {
+  font-weight: bold;
+  text-decoration: underline;
 }
 
-.service-card:hover {
-  background-color: #efefef;
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+.nav-link:hover {
+  text-decoration: underline;
+}
+
+/* Boutons : assombrissement au survol */
+.btn-danger:hover {
+  background-color: #b02a37;
+}
+
+.btn-primary:hover {
+  background-color: #0a58ca;
+}
+
+/* Footer : icônes réseaux sociaux au survol */
+.footer-icon {
+  transition: color 0.3s ease;
+}
+
+.footer-icon:hover {
+  color: #ffffff !important;
+  opacity: 0.7;
+}
+
+/* Footer : liens en gras au survol */
+.footer-link:hover {
+  font-weight: bold;
 }

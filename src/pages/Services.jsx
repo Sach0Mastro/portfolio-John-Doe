@@ -33,7 +33,7 @@ function Services() {
               <div className="card h-100 service-card text-center">
                 <div className="card-body">
                   <i className={`bi ${service.icone} text-primary fs-1 mb-3`}></i>
-                  <h5 className="card-title">{service.titre}</h5>
+                 <h4 className="card-title h5">{service.titre}</h4>
                   <p className="card-text">{service.description}</p>
                 </div>
               </div>

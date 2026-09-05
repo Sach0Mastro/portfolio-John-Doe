@@ -1,40 +1,33 @@
+import { Navbar, Nav, Container } from 'react-bootstrap';
 import { NavLink } from 'react-router-dom';
 
 function Header() {
   return (
-    <header className="bg-dark py-3">
-      <nav className="container d-flex justify-content-between align-items-center">
-        <span className="text-white fw-bold">JOHN DOE</span>
-
-        <ul className="nav">
-          <li className="nav-item">
-            <NavLink to="/" className="nav-link text-white text-uppercase">
+    <Navbar bg="dark" variant="dark" expand="lg" className="py-3">
+      <Container>
+        <Navbar.Brand className="fw-bold">JOHN DOE</Navbar.Brand>
+        <Navbar.Toggle aria-controls="main-navbar" />
+        <Navbar.Collapse id="main-navbar">
+          <Nav className="ms-auto">
+            <Nav.Link as={NavLink} to="/" className="text-uppercase">
               Home
-            </NavLink>
-          </li>
-          <li className="nav-item">
-            <NavLink to="/services" className="nav-link text-white text-uppercase">
+            </Nav.Link>
+            <Nav.Link as={NavLink} to="/services" className="text-uppercase">
               Services
-            </NavLink>
-          </li>
-          <li className="nav-item">
-            <NavLink to="/portfolio" className="nav-link text-white text-uppercase">
+            </Nav.Link>
+            <Nav.Link as={NavLink} to="/portfolio" className="text-uppercase">
               Portfolio
-            </NavLink>
-          </li>
-          <li className="nav-item">
-            <NavLink to="/contact" className="nav-link text-white text-uppercase">
+            </Nav.Link>
+            <Nav.Link as={NavLink} to="/contact" className="text-uppercase">
               Contact
-            </NavLink>
-          </li>
-          <li className="nav-item">
-            <NavLink to="/mentions-legales" className="nav-link text-white text-uppercase">
+            </Nav.Link>
+            <Nav.Link as={NavLink} to="/mentions-legales" className="text-uppercase">
               Mentions légales
-            </NavLink>
-          </li>
-        </ul>
-      </nav>
-    </header>
+            </Nav.Link>
+          </Nav>
+        </Navbar.Collapse>
+      </Container>
+    </Navbar>
   );
 }
 

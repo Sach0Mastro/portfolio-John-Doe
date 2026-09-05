@@ -36,7 +36,7 @@ function Portfolio() {
                   style={{ height: "180px", objectFit: "cover" }}
                 />
                 <div className="card-body d-flex flex-column">
-                  <h5 className="card-title">{projet.titre}</h5>
+                  <h2 className="card-title h5">{projet.titre}</h2>
                   <p className="card-text">{projet.description}</p>
                   <button className="btn btn-primary portfolio-btn mt-2">
                     Voir le site

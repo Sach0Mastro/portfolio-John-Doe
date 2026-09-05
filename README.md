@@ -1,16 +1,70 @@
-# React + Vite
+# Portfolio John Doe
 
-This template provides a minimal setup to get React working in Vite with HMR and some Oxlint rules.
+Site portfolio réalisé pour John Doe, développeur web en formation, permettant de se présenter sur le marché de l'emploi et de mettre en avant ses compétences et réalisations.
 
-Currently, two official plugins are available:
+Projet réalisé dans le cadre d'une formation développeur web au CEF (Centre Européen de Formation).
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+## Fonctionnalités
 
-## React Compiler
+- Page d'accueil avec présentation, compétences et modale reprenant les informations d'un profil GitHub
+- Page Services présentant les prestations proposées
+- Page Portfolio présentant 6 réalisations
+- Page Contact avec formulaire et carte Google Maps
+- Page Mentions légales avec accordéon
+- Navigation responsive avec menu hamburger sur mobile/tablette
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+## Technologies utilisées
 
-## Expanding the Oxlint configuration
+- React (via Vite)
+- React Router DOM
+- Bootstrap 5 et React-Bootstrap
+- Bootstrap Icons
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and Oxlint's TypeScript related rules in your project.
+## Prérequis
+
+- [Node.js](https://nodejs.org/) (version 18 ou supérieure recommandée)
+- npm (installé automatiquement avec Node.js)
+
+## Installation
+
+1. Cloner le dépôt :
+
+```bash
+git clone https://github.com/Sach0Mastro/portfolio-John-Doe.git
+```
+
+2. Se placer dans le dossier du projet :
+
+```bash
+cd portfolio-John-Doe
+```
+
+3. Installer les dépendances :
+
+```bash
+npm install
+```
+
+## Lancement en mode développement
+
+```bash
+npm run dev
+```
+
+Le site est alors accessible à l'adresse indiquée dans le terminal (généralement `http://localhost:5173`).
+
+## Construction pour la production
+
+```bash
+npm run build
+```
+
+Puis pour prévisualiser la version construite :
+
+```bash
+npm run preview
+```
+
+## Auteur
+
+Projet réalisé par Sacha Mastrolonardo dans le cadre d'une formation développeur web.
